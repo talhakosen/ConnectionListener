@@ -5,17 +5,18 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.widget.Toast;
 
 import com.talhakosen.connectionlistener.classes.ConnectionData;
 import com.talhakosen.connectionlistener.classes.ConnectionType;
 
 public class ConnectionChangeReceiver extends BroadcastReceiver {
-	public void onReceive(Context context, Intent intent) {
+
+	@Override
+	public void onReceive(Context arg0, Intent arg1) {
+
 		ConnectionData connectionData = ConnectionData.getInstance();
 
-		ConnectivityManager connectivityManager = (ConnectivityManager) context
-				.getSystemService(Context.CONNECTIVITY_SERVICE);
+		ConnectivityManager connectivityManager = (ConnectivityManager) arg0.getSystemService(Context.CONNECTIVITY_SERVICE);
 		NetworkInfo activeNetInfo = connectivityManager.getActiveNetworkInfo();
 		NetworkInfo mobNetInfo = connectivityManager
 				.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
@@ -37,6 +38,7 @@ public class ConnectionChangeReceiver extends BroadcastReceiver {
 		if (activeNetInfo == null) {
 			connectionData.setConnection(ConnectionType.NoConnection);
 		}
+
 	}
 
 }
