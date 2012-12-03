@@ -1,8 +1,5 @@
 package com.talhakosen.classes;
 
-import java.util.ArrayList;
-import android.app.Activity;
-import com.talhakosen.classes.Constants;
 
 public class ConnectionSpeed {
 	public static SpeedInfo calculate(final long downloadTime, final long bytesIn) {

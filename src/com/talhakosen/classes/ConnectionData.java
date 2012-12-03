@@ -2,11 +2,6 @@ package com.talhakosen.classes;
 
 import java.util.ArrayList;
 
-
-
-
-import android.app.Activity;
-
 public class ConnectionData implements Subject {
 	private static ConnectionData uniqueConnectionData;
 	private ArrayList observers;

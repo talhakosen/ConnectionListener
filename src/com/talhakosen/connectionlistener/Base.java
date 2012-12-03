@@ -1,15 +1,14 @@
 package com.talhakosen.connectionlistener;
 
 
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+
 import com.talhakosen.classes.ConnectionData;
 import com.talhakosen.classes.ConnectionType;
 import com.talhakosen.classes.DisplayElement;
 import com.talhakosen.classes.Observer;
-
-import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
-import android.app.Activity;
 
 public abstract class Base extends Activity implements Observer, DisplayElement {
 	public ConnectionType connectionType;
@@ -21,13 +20,10 @@ public abstract class Base extends Activity implements Observer, DisplayElement 
 		connectionData.registerObserver(this);
 	}
 
-	public void display(View view){
-		
-	}
 
 	public void update(ConnectionType connectionType) {
 		this.connectionType = connectionType;
-		display(view);
+		display();
 	}
 
 }
