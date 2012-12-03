@@ -1,7 +1,5 @@
 package com.talhakosen.receivers;
 
-
-
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -21,18 +19,24 @@ public class ConnectionChangeReceiver extends BroadcastReceiver {
 		NetworkInfo activeNetInfo = connectivityManager.getActiveNetworkInfo();
 		NetworkInfo mobNetInfo = connectivityManager
 				.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+		NetworkInfo wifiNetInfo = connectivityManager
+				.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
 
-		if (activeNetInfo != null) {
-			Toast.makeText(context,
-					"Active Network Type : " + activeNetInfo.getTypeName(),
-					Toast.LENGTH_SHORT).show();
-			// connectionData.setConnection(ConnectionType.Wireless);
+		// update observer
+
+		if (wifiNetInfo != null) {
+			if (wifiNetInfo.isConnected())
+				connectionData.setConnection(ConnectionType.Wireless);
 		}
+
 		if (mobNetInfo != null) {
-			// Toast.makeText( context, "Mobile Network Type : " +
-			// mobNetInfo.getTypeName(), Toast.LENGTH_SHORT ).show();
-			connectionData.setConnection(ConnectionType.Wireless);
+			if (mobNetInfo.isConnected())
+				connectionData.setConnection(ConnectionType.Mobile);
+		}
+
+		if (activeNetInfo == null) {
+			connectionData.setConnection(ConnectionType.NoConnection);
 		}
 	}
-	
+
 }

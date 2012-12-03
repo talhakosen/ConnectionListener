@@ -1,1 +1,38 @@
-Talha
+How to use
+
+public class MainActivity extends Base {
+	TextView txt;
+		
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		txt=(TextView)findViewById(R.id.txt);		
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.activity_main, menu);
+		return true;
+	}
+
+	public void display() {
+		
+		// You can update your code at runtime depends of the network connection
+		
+		switch (connectionType) {
+		case NoConnection:
+			    
+			break;
+		case Rooming:
+
+			break;
+		case Wireless:
+
+			break;		
+		}
+		
+		txt.setText(connectionType.name());
+	}
+
+}
