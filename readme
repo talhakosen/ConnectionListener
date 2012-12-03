@@ -1,38 +1,47 @@
-How to use
+   you have to put this reciver to new project manifest
+   
+   <receiver
+        android:name="com.talhakosen.connectionlistener.receivers.ConnectionChangeReceiver"
+        android:label="NetworkConnection" >
+        <intent-filter>
+            <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            <action android:name="android.intent.action.PHONE_STATE" />
+        </intent-filter>
+    </receiver>
 
-public class MainActivity extends Base {
-	TextView txt;
-		
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-		txt=(TextView)findViewById(R.id.txt);		
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.activity_main, menu);
-		return true;
-	}
-
-	public void display() {
-		
-		// You can update your code at runtime depends of the network connection
-		
-		switch (connectionType) {
-		case NoConnection:
-			    
-			break;
-		case Rooming:
-
-			break;
-		case Wireless:
-
-			break;		
+	public class MainActivity extends Base {
+		TextView txt;
+			
+		@Override
+		public void onCreate(Bundle savedInstanceState) {
+			super.onCreate(savedInstanceState);
+			setContentView(R.layout.activity_main);
+			txt=(TextView)findViewById(R.id.txt);		
 		}
-		
-		txt.setText(connectionType.name());
+	
+		@Override
+		public boolean onCreateOptionsMenu(Menu menu) {
+			getMenuInflater().inflate(R.menu.activity_main, menu);
+			return true;
+		}
+	
+		public void display() {
+			
+			// You can update your code at runtime depends of the network connection
+			
+			switch (connectionType) {
+			case NoConnection:
+				    
+				break;
+			case Rooming:
+	
+				break;
+			case Wireless:
+	
+				break;		
+			}
+			
+			txt.setText(connectionType.name());
+		}
+	
 	}
-
-}
