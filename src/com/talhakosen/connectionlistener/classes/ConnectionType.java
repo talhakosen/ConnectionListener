@@ -1,4 +1,4 @@
-package com.talhakosen.classes;
+package com.talhakosen.connectionlistener.classes;
  
 public enum ConnectionType {
 	Wireless(0), Mobile(1),NoConnection(1);

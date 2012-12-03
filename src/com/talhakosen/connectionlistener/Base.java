@@ -5,10 +5,10 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.talhakosen.classes.ConnectionData;
-import com.talhakosen.classes.ConnectionType;
-import com.talhakosen.classes.DisplayElement;
-import com.talhakosen.classes.Observer;
+import com.talhakosen.connectionlistener.classes.ConnectionData;
+import com.talhakosen.connectionlistener.classes.ConnectionType;
+import com.talhakosen.connectionlistener.classes.DisplayElement;
+import com.talhakosen.connectionlistener.classes.Observer;
 
 public abstract class Base extends Activity implements Observer, DisplayElement {
 	public ConnectionType connectionType;

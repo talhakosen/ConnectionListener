@@ -1,4 +1,4 @@
-package com.talhakosen.receivers;
+package com.talhakosen.connectionlistener.receivers;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -7,8 +7,8 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.widget.Toast;
 
-import com.talhakosen.classes.ConnectionData;
-import com.talhakosen.classes.ConnectionType;
+import com.talhakosen.connectionlistener.classes.ConnectionData;
+import com.talhakosen.connectionlistener.classes.ConnectionType;
 
 public class ConnectionChangeReceiver extends BroadcastReceiver {
 	public void onReceive(Context context, Intent intent) {
