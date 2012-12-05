@@ -3,14 +3,21 @@ package com.talhakosen.connectionlistener.receivers;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorListener;
+import android.hardware.SensorManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-
+import android.preference.PreferenceManager.OnActivityResultListener;
+import android.widget.Toast;
 import com.talhakosen.connectionlistener.classes.ConnectionData;
-import com.talhakosen.connectionlistener.classes.ConnectionType;
+import com.talhakosen.connectionlistener.classes.ConnectionType;;
 
 public class ConnectionChangeReceiver extends BroadcastReceiver {
 
+		
 	@Override
 	public void onReceive(Context arg0, Intent arg1) {
 
